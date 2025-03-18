@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<conio.h>
+void selection(int arr[],int n)
+{
+	 int i,j,k;
+	 for (i = 0; i < n - 1; i++) {
+
+        int min_idx = i;
+        for ( j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min_idx]) {
+
+                min_idx = j;
+            }
+        }
+        int temp = arr[i];
+        arr[i] = arr[min_idx];
+        arr[min_idx] = temp;
+    }
+}
+void main()
+{
+	int arr[100],n;
+	printf("Enter the number of elements");
+	scanf("%d",&n);
+	printf("Enter array elements");
+	int i,j,k;
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	selection(arr,n);
+	printf("Sorted array \n");
+		for(i=0;i<n;i++)
+	{
+		printf("%d ",arr[i]);
+	}
+	
+}
+
+output:
+Enter the number of elements5
+Enter array elements32
+23
+56
+45
+78
+Sorted array
+23 32 45 56 78
